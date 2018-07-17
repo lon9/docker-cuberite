@@ -1,0 +1,16 @@
+version: "3"
+services:
+  server:
+    image: ubuntu
+    command: ./Cuberite
+    working_dir: /Server
+    tty: true
+    volumes:
+      - ./data:/Server
+    expose:
+      - 8080
+      - 25565
+
+  prepare:
+    build: .
+    command: ./Cuberite
